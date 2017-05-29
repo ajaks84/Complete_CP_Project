@@ -6,25 +6,18 @@ public class LineDTO {
 	
 	@Mapping("id")
 	private Integer id;
-	
 	@Mapping("name")
 	private String name;
-	
 	@Mapping("productId")
 	private Integer productId;
-	
 	@Mapping("speed")
 	private Integer speed;
-	
 	@Mapping("unit")
 	private String unit;
-	
 	@Mapping("capacity")
 	private Integer capacity;
-	
 	@Mapping("buildYear")
 	private Integer buildYear;
-	
 	@Mapping("factoryId")
 	private Integer factoryId;
 

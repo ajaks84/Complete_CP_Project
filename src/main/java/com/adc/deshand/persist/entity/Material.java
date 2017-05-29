@@ -16,7 +16,6 @@ public class Material {
 	private String name;
 	private String unit;
 	private Boolean deleted;
-//	private Collection<Consumption> consumption;
 
 	@Id
 	@GenericGenerator(name = "generator", strategy = "increment")

@@ -3,38 +3,20 @@
 
   angular.module('Data')
     .service('DataService', DataService)
-    .constant('REST_END_POINT', 'https://localhost:8080/counter-project/');
+    .constant('REST_END_POINT', 'https://counter-proj.herokuapp.com');
 
   DataService.$inject = ['$http','REST_END_POINT']
 
   function DataService($http,REST_END_POINT) {
     var service = this;
 
-    //  service.getShifts = function () {
-    //         return $http.get('data/shifts.json')
-    //                     .then(function (result) {
-    //                       // console.log(result.data);
-    //                         return result.data;     
-    //   });
-    // };
-
     service.getShifts = function(lineId, reportDate) {
-      //console.log('lineId: '+lineId);
-      // console.log('reportDate: '+reportDate);
+      //console.log('lineId: '+lineId+' reportDate: '+reportDate);
       return $http.get(REST_END_POINT+'/reports/by' + lineId + '/' + reportDate)
         .then(function(result) {
           return result.data;
         });
     };
-
-    // service.getShiftData = function (line,date,shift) {
-    //         //console.log('http://localhost:8080/CounterProject/report/'+line+'/'+date+'/'+shift);
-    //         return $http.get('http://localhost:8080/CounterProject/report/'+line+'/'+date+'/'+shift)
-    //                     .then(function (result) {
-    //                         return result.data;     
-    //   });
-    // };
-
 
     service.getCountryById = function(countryId) {
       //console.log('getCountryById');
@@ -72,15 +54,6 @@
           return result.data;
         });
     };
-
-    //   service.getDeleteCountryById = function (country_id) {
-    //         return $http.delete('http://localhost:8088/countries'+country_id )
-    //                     .then(function (result) {
-    //                       // console.log(result.data);
-    //                         return result.data;     
-    //   });
-    // };
-
 
     service.getFactoryById = function(factoryId) {
       //console.log('getFactoryById');
@@ -209,6 +182,33 @@
           return result.data;
         });
     };
+    
+    //  service.getShifts = function () {
+    //         return $http.get('data/shifts.json')
+    //                     .then(function (result) {
+    //                       // console.log(result.data);
+    //                         return result.data;     
+    //   });
+    // };
+    
+
+    //   service.getDeleteCountryById = function (country_id) {
+    //         return $http.delete('http://localhost:8088/countries'+country_id )
+    //                     .then(function (result) {
+    //                       // console.log(result.data);
+    //                         return result.data;     
+    //   });
+    // };
+    
+    // service.getShiftData = function (line,date,shift) {
+    //         //console.log('http://localhost:8080/CounterProject/report/'+line+'/'+date+'/'+shift);
+    //         return $http.get('http://localhost:8080/CounterProject/report/'+line+'/'+date+'/'+shift)
+    //                     .then(function (result) {
+    //                         return result.data;     
+    //   });
+    // };
+
+
 
   };
 

@@ -18,7 +18,6 @@ public class Consumption {
 	private Integer id;
 	private Integer reportId;
 	private Material material;
-//	private Integer materialId;
 	private Double quantity;
 
 	@Id
@@ -32,6 +31,7 @@ public class Consumption {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	@Column(name = "report_id", nullable = false)
 	public Integer getReportId() {
 		return reportId;

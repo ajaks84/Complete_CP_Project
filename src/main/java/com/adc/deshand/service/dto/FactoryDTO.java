@@ -6,10 +6,8 @@ public class FactoryDTO {
 
 	@Mapping("id")
 	private Integer id;
-
 	@Mapping("name")
 	private String name;
-
 	@Mapping("countryId")
 	private Integer countryId;
 

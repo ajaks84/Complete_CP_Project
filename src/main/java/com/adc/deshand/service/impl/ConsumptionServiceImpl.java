@@ -22,11 +22,10 @@ public class ConsumptionServiceImpl extends GenericServiceImpl<Consumption, Cons
 	public List<ConsumptionDTO> findByMaterialId(Integer material_id) {
 
 		List<ConsumptionDTO> result = new ArrayList<ConsumptionDTO>();
-
 		List<Consumption> c = repository.findByReportlId(material_id);
 
 		for (Consumption consumption : c) {
-			System.out.println(consumption.toString());
+//			System.out.println(consumption.toString());
 			result.add(mapper.map(consumption, dtoClass));
 		}
 

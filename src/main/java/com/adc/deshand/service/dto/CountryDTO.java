@@ -6,7 +6,6 @@ public class CountryDTO {
 	
     @Mapping("id")
 	private Integer id;
-
     @Mapping("name")
     private String name;
 
